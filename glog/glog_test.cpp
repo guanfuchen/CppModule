@@ -1,14 +1,20 @@
 #include <iostream>
 #include <glog/logging.h>
+#include <boost/filesystem.hpp>
 
 using namespace std;
+using namespace boost::filesystem;
 
 int main(int argc, char** argv) {
     cout<<"glog_test----in----"<<endl;
 
     FLAGS_alsologtostderr = 1;
     FLAGS_colorlogtostderr = true;
-    FLAGS_log_dir = "/tmp/log/";
+
+    FLAGS_log_dir = "/tmp/glog/";
+    if(!exists(FLAGS_log_dir)) {
+        create_directory(FLAGS_log_dir);
+    }
     google::InitGoogleLogging(argv[0]);
 
     LOG(INFO) << "I am INFO!";
