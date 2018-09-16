@@ -3,3 +3,5 @@ project(CppModule)
 
 add_subdirectory(glog)
 add_subdirectory(gflags)
+add_subdirectory(boost)
+add_subdirectory(protobuf)

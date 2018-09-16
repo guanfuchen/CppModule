@@ -16,11 +16,13 @@ int main(int argc, char** argv) {
         create_directory(FLAGS_log_dir);
     }
     google::InitGoogleLogging(argv[0]);
+    // 提供段错误回溯
+    google::InstallFailureSignalHandler();
 
     LOG(INFO) << "I am INFO!";
     LOG(WARNING) << "I am WARNING!";
     LOG(ERROR) << "I am ERROR!";
-//    LOG(FATAL) << "I am FATAL!";
+    LOG(FATAL) << "I am FATAL!";
     for(int i=0; i<1024; ++i) {
         // 打印最先的5次日志
         LOG_FIRST_N(INFO, 5) << "LOG_FIRST_N " << google::COUNTER;

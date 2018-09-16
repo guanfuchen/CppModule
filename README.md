@@ -32,3 +32,6 @@ CMake使用相关参考[cmake使用](./cmake/README.md)。
 - HDF5
 - Snappy
 
+---
+## 参考资料
+- [Caffe使用的第三方库（一）](http://blog.leanote.com/post/fishing_piggy/Caffe%E4%BD%BF%E7%94%A8%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93)，这个系列较好地对Caffe源码进行了解析，其中包括前期对Caffe依赖地第三方库地学习，然后对整个结构框架进行了分析。

@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package addressbook;
+
+message Person {
+  required string name = 1; // 人名
+  required int32 id = 2; // Person id
+  optional string email = 3; // Person email
+
+  enum PhoneType {
+    MOBILE = 0; // PhoneType类型Modile, HOME和WORK
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message PhoneNumber {
+    required string number = 1;
+    optional PhoneType type = 2 [default = HOME];
+  }
+
+  repeated PhoneNumber phones = 4; // 一个人可以有多个电话
+}
+
+// 地址簿一般是一行包含一条记录
+message AddressBook {
+  repeated Person people = 1;
+}
